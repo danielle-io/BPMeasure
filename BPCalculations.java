@@ -13,11 +13,8 @@ When B > A (ie. we must mix our next track to a lower BPM)
 public class BPCalculations {
     
     // INSTANCE VARIABLES
-    private double trackA; // first track we play (+)
-    private double trackB; // second track we play (+)
-    private double percentShift; // amount we must shift by (+/-)
-    
-    // CONSTRUCTOR
+    private double trackA, trackB, percentShift; // first track we play (+)
+
     public BPCalculations() {
         trackA = 0.0;
         trackB = 0.0;
@@ -71,9 +68,8 @@ public class BPCalculations {
     public double finalPercentage() {
         if(trackA > trackB) {
             return percentageIncrease();
-        } else {
-            return percentageDecrease();
-        }
+        } 
+        return percentageDecrease();
     }
     
     // OTHER METHODS
@@ -81,9 +77,8 @@ public class BPCalculations {
     public boolean isValidTrack(double track) {
         if(track >= 0.0 && track <= 200.0) {
             return true;
-        } else {
-            return false;
         }
+        return false;
     }
     
 }

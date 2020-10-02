@@ -3,6 +3,7 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 import java.text.DecimalFormat; // to format our numbers
+
 public class BPFrame implements ActionListener {
     // INSTANCE VARIABLES
     private JLabel jlabInstruction; // instructions label
@@ -56,7 +57,6 @@ public class BPFrame implements ActionListener {
         jfrm.add(gridPanel);
         jfrm.getRootPane().setDefaultButton(jbtnConvert); // if user hits enter, convert by default
         
-        
         jfrm.setVisible(true);
     }
     
@@ -64,6 +64,7 @@ public class BPFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         double currentBpm = Double.parseDouble(jtxtBpmCurrent.getText());
         double nextBpm = Double.parseDouble(jtxtBpmNext.getText());
+        
         // set the tracks to use in BPCalculations
         calculate.setTrackA(currentBpm);
         calculate.setTrackB(nextBpm);
